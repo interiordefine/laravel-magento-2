@@ -50,10 +50,10 @@ abstract class AbstractApi
     {
         $request = $this->magento->baseUrl;
         $request .= '/'.$this->magento->basePath;
-        
-        // Allow an empty string to bypass setting the storeCode
+
+        // Allow "none" to bypass the inclusion of the store code
         // This is to allow API calls with full access to work on any store or guest/admin
-        if(!empty($this->magento->storeCode)) {
+        if($this->magento->storeCode !== 'none') {
             $request .= '/'.$this->magento->storeCode;
         }
 

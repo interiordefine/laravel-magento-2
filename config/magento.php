@@ -58,6 +58,8 @@ return [
     |  on requests. Developers may update this to specify
     |  the API around a specific store code.
     |
+    | "all", "default", "none"
+    |
     */
     'store_code' => env('MAGENTO_STORE_CODE', 'all'),
 
