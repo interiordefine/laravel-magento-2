@@ -18,7 +18,7 @@ class Warranty extends AbstractApi
      */
     public function getWarranties($quoteId, $itemId): Response
     {
-        return $this->get('/warranty', ['quoteId' => $quoteId, 'itemId' => $itemId]);
+        return $this->get('/point-of-sales/get-warranties-list', ['quoteId' => $quoteId, 'itemId' => $itemId]);
     }
 
     /**
@@ -32,7 +32,7 @@ class Warranty extends AbstractApi
      */
     public function setItemWarranty($quoteId, $itemId, $warrantyHash): Response
     {
-        return $this->post('/warranty', ['quoteId' => $quoteId, 'itemId' => $itemId, 'warrantyHash' => $warrantyHash]);
+        return $this->post('point-of-sales/set-item-warranty', ['quoteId' => $quoteId, 'itemId' => $itemId, 'warrantyHash' => $warrantyHash]);
     }
 
 }

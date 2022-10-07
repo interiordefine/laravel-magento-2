@@ -203,7 +203,7 @@ class GuestCarts extends AbstractApi
      */
     public function quoteLink($cartId, $adminEmail, $customerEmail, $customerFirstName, $customerLastName): Response
     {
-        return $this->post('/guest-carts/quoteLink', [
+        return $this->post('/point-of-sales/create-quote-link', [
                 'cartId' => $cartId,
                 'adminUserEmail' => $adminEmail,
                 'customerEmail' => $customerEmail,
