@@ -198,10 +198,14 @@ class GuestCarts extends AbstractApi
      * @param string $customerEmail
      * @param string $customerFirstName
      * @param string $customerLastName
+     * @param $saleRep
+     * @param $salesLocation
+     * @param string $salesChannel
+     * @param string $orderType
      * @return Response
      * @throws Exception
      */
-    public function quoteLink($cartId, $adminEmail, $customerEmail, $customerFirstName, $customerLastName): Response
+    public function quoteLink($cartId, $adminEmail, $customerEmail, $customerFirstName, $customerLastName, $saleRep, $salesLocation, string $salesChannel = "Email", string $orderType = 'standard'): Response
     {
         return $this->post('/point-of-sales/create-quote-link', [
                 'cartId' => $cartId,
@@ -209,6 +213,10 @@ class GuestCarts extends AbstractApi
                 'customerEmail' => $customerEmail,
                 'customerFirstName' => $customerFirstName,
                 'customerLastName' => $customerLastName,
+                'saleRep' => $saleRep,
+                'salesLocation' => $salesLocation,
+                'salesChannel' => $salesChannel,
+                'orderType' => $orderType
             ]
         );
     }
