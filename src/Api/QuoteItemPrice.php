@@ -18,7 +18,7 @@ class QuoteItemPrice extends AbstractApi
      */
     public function setItemPrice($quoteId, $itemId, $price): Response
     {
-        return $this->get('/point-of-sales/set-item-price', [
+        return $this->post('/point-of-sales/set-item-price', [
             "cartId" => $quoteId,
             "itemId" => (string)$itemId,
             "price" => $price
