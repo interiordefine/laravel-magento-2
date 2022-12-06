@@ -205,7 +205,7 @@ class GuestCarts extends AbstractApi
      * @return Response
      * @throws Exception
      */
-    public function quoteLink($cartId, $adminEmail, $customerEmail, $customerFirstName, $customerLastName, $saleRep, $salesLocation, $salesChannel = "Email", $orderType = 'standard'): Response
+    public function quoteLink($cartId, $adminEmail, $customerEmail, $customerFirstName, $customerLastName, $saleRep, $salesLocation, $salesChannel = "Email",$archyProjectId = null, $orderType = 'standard'): Response
     {
         return $this->post('/point-of-sales/create-quote-link', [
                 'cartId' => $cartId,
@@ -216,6 +216,7 @@ class GuestCarts extends AbstractApi
                 'saleRep' => $saleRep,
                 'salesLocation' => $salesLocation,
                 'salesChannel' => $salesChannel,
+                'archyProjectId' => $archyProjectId,
                 'orderType' => $orderType
             ]
         );
