@@ -32,7 +32,7 @@ class Warranty extends AbstractApi
      */
     public function setItemWarranty($quoteId, $itemId, $warrantyHash): Response
     {
-        return $this->post('point-of-sales/set-item-warranty', ['quoteId' => $quoteId, 'itemId' => $itemId, 'warrantyHash' => $warrantyHash]);
+        return $this->post('/point-of-sales/set-item-warranty', ['quoteId' => $quoteId, 'itemId' => $itemId, 'warrantyHash' => $warrantyHash]);
     }
 
 }
